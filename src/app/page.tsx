@@ -235,7 +235,7 @@ export default function HomePage() {
         )}
 
         <div className="mt-14 text-center border-t pt-10 border-gray-300">
-          <h2 className="text-lg font-semibold mb-2">
+          <h2 className="text-lg text-black font-semibold mb-2">
             🌐 Junte-se à Comunidade
           </h2>
           <p className="text-gray-600 text-sm mb-4">
