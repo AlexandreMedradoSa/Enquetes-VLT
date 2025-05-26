@@ -1,11 +1,11 @@
 import { supabase } from '@/lib/supabase';
 import { NextResponse } from 'next/server';
 
-type Faixa = 'menos1' | 'ate5' | 'ate10' | 'mais10';
+type Faixa = 'pontual' | 'menos1' | 'ate5' | 'ate10' | 'mais10';
 type RotaId = 'iate' | 'parangaba';
 
 const rotasValidas: RotaId[] = ['iate', 'parangaba'];
-const faixasValidas: Faixa[] = ['menos1', 'ate5', 'ate10', 'mais10'];
+const faixasValidas: Faixa[] = ['pontual', 'menos1', 'ate5', 'ate10', 'mais10'];
 
 export async function POST(req: Request) {
   try {
@@ -62,8 +62,8 @@ export async function GET(req: Request) {
   }
 
   const votosPorRota: Record<RotaId, Record<Faixa, number>> = {
-    iate: { menos1: 0, ate5: 0, ate10: 0, mais10: 0 },
-    parangaba: { menos1: 0, ate5: 0, ate10: 0, mais10: 0 },
+    iate: { pontual: 0, menos1: 0, ate5: 0, ate10: 0, mais10: 0 },
+    parangaba: { pontual: 0, menos1: 0, ate5: 0, ate10: 0, mais10: 0 },
   };
 
   for (const voto of data) {
